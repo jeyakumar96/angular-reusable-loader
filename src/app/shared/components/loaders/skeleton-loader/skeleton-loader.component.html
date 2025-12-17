@@ -1,0 +1,50 @@
+<div
+  class="skeleton-container"
+  [class]="'skeleton-' + type + ' skeleton-' + animation + ' skeleton-' + theme"
+  [style.width]="width"
+  [style.height]="height"
+>
+  <!-- Text Type -->
+  <div *ngIf="type === 'text'">
+    <div
+      class="skeleton-line"
+      *ngFor="let line of lineArray; let last = last"
+      [class.short]="last && lines > 1"
+    ></div>
+  </div>
+
+  <!-- Card Type -->
+  <div *ngIf="type === 'card'" class="skeleton-card">
+    <div class="skeleton-image"></div>
+    <div class="skeleton-content">
+      <div class="skeleton-title" *ngIf="title"></div>
+      <div class="skeleton-subtitle" *ngIf="subtitle"></div>
+      <div class="skeleton-line" *ngFor="let line of lineArray"></div>
+    </div>
+  </div>
+
+  <!-- List Type -->
+  <div *ngIf="type === 'list'" class="skeleton-list">
+    <div class="skeleton-list-item" *ngFor="let line of lineArray">
+      <div class="skeleton-avatar" *ngIf="avatar"></div>
+      <div class="skeleton-list-content">
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line short"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Avatar Type -->
+  <div *ngIf="type === 'avatar'" class="skeleton-avatar-group">
+    <div class="skeleton-avatar large"></div>
+    <div class="skeleton-avatar-info">
+      <div class="skeleton-line"></div>
+      <div class="skeleton-line short"></div>
+    </div>
+  </div>
+
+  <!-- Custom Type -->
+  <div *ngIf="type === 'custom'" class="skeleton-custom">
+    <ng-content></ng-content>
+  </div>
+</div>

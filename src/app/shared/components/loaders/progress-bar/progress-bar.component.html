@@ -1,0 +1,33 @@
+<div class="progress-container">
+  <div
+    class="progress-bar"
+    [class]="
+      'progress-' +
+      height +
+      (rounded ? ' progress-rounded' : '') +
+      (striped ? ' progress-striped' : '') +
+      (animated ? ' progress-animated' : '')
+    "
+    [style.background-color]="backgroundColor"
+  >
+    <!-- Determinate Progress -->
+    <div
+      *ngIf="!indeterminate"
+      class="progress-fill"
+      [style.width.%]="progress"
+      [style.background-color]="color"
+    ></div>
+
+    <!-- Indeterminate Progress -->
+    <div
+      *ngIf="indeterminate"
+      class="progress-fill progress-indeterminate"
+      [style.background-color]="color"
+    ></div>
+  </div>
+
+  <!-- Percentage Display -->
+  <div class="progress-percentage" *ngIf="showPercentage && !indeterminate">
+    {{ progress }}%
+  </div>
+</div>

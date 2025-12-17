@@ -1,0 +1,11 @@
+<div class="spinner-container">
+  <div
+    class="spinner"
+    [class]="'spinner-' + size + ' spinner-' + thickness + ' spinner-' + speed"
+    [style.border-top-color]="color"
+    [style.border-right-color]="color"
+  ></div>
+  <div class="spinner-message" *ngIf="message && showMessage">
+    {{ message }}
+  </div>
+</div>

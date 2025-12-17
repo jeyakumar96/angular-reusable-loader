@@ -1,0 +1,92 @@
+/* Route Loader Base */
+.route-loader {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #007bff;
+  z-index: 10000;
+}
+
+/* Position Variations */
+.route-top {
+  top: 0;
+}
+
+.route-bottom {
+  bottom: 0;
+}
+
+/* Animated Progress */
+.route-animated {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    currentColor 50%,
+    transparent
+  );
+  animation: routeProgress 2s ease-in-out infinite;
+}
+
+/* Speed Variations */
+.route-slow.route-animated {
+  animation-duration: 3s;
+}
+
+.route-normal.route-animated {
+  animation-duration: 2s;
+}
+
+.route-fast.route-animated {
+  animation-duration: 1s;
+}
+
+/* Glow Effect */
+.route-glow {
+  box-shadow: 0 0 10px currentColor;
+}
+
+/* Route Progress Animation */
+@keyframes routeProgress {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Alternative slide animation */
+.route-loader.slide {
+  width: 0%;
+  animation: routeSlide 2s ease-out forwards;
+}
+
+@keyframes routeSlide {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Pulse animation for indeterminate loading */
+.route-loader.pulse {
+  animation: routePulse 1.5s ease-in-out infinite;
+}
+
+@keyframes routePulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}

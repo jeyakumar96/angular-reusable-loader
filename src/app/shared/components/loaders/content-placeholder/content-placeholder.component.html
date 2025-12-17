@@ -1,0 +1,31 @@
+<div
+  *ngIf="show"
+  class="content-placeholder"
+  [style.height]="height"
+  [style.width]="width"
+>
+  <!-- Skeleton Type -->
+  <div *ngIf="type === 'skeleton'" class="placeholder-skeleton">
+    <app-skeleton-loader
+      [type]="skeletonType"
+      [lines]="skeletonLines"
+      [width]="width"
+    >
+    </app-skeleton-loader>
+  </div>
+
+  <!-- Spinner Type -->
+  <div *ngIf="type === 'spinner'" class="placeholder-spinner">
+    <app-spinner
+      [size]="spinnerSize"
+      [color]="spinnerColor"
+      [message]="message"
+    >
+    </app-spinner>
+  </div>
+
+  <!-- Custom Type -->
+  <div *ngIf="type === 'custom'" class="placeholder-custom">
+    <ng-content></ng-content>
+  </div>
+</div>

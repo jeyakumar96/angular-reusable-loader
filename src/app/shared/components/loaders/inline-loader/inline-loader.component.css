@@ -1,0 +1,41 @@
+/* Inline Loader Base */
+.inline-loader {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Position Variations */
+.inline-left {
+  justify-content: flex-start;
+}
+
+.inline-right {
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+}
+
+.inline-center {
+  justify-content: center;
+}
+
+/* Message Styling */
+.inline-message {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* For buttons and small spaces */
+.inline-loader.inline-xs .inline-message {
+  font-size: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .inline-message {
+    font-size: 13px;
+  }
+}

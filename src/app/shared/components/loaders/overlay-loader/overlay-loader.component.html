@@ -1,0 +1,18 @@
+<div
+  *ngIf="show"
+  class="overlay-loader"
+  [class.overlay-blur]="blur"
+  [style.background-color]="backgroundColor"
+  [style.position]="position"
+  [style.z-index]="zIndex"
+>
+  <div class="overlay-content">
+    <app-spinner
+      [size]="spinnerSize"
+      [color]="spinnerColor"
+      [message]="message"
+      [showMessage]="!!message"
+    >
+    </app-spinner>
+  </div>
+</div>

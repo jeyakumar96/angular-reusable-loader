@@ -1,0 +1,169 @@
+/* Base Skeleton Styles */
+.skeleton-container {
+  display: block;
+  width: 100%;
+}
+
+/* Skeleton Elements */
+.skeleton-line,
+.skeleton-title,
+.skeleton-subtitle,
+.skeleton-image,
+.skeleton-avatar {
+  background: #f0f0f0;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.skeleton-line {
+  height: 16px;
+}
+
+.skeleton-line.short {
+  width: 60%;
+}
+
+.skeleton-title {
+  height: 24px;
+  width: 80%;
+  margin-bottom: 12px;
+}
+
+.skeleton-subtitle {
+  height: 18px;
+  width: 60%;
+  margin-bottom: 16px;
+}
+
+/* Avatar Styles */
+.skeleton-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.skeleton-avatar.large {
+  width: 60px;
+  height: 60px;
+}
+
+.skeleton-avatar-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.skeleton-avatar-info {
+  flex: 1;
+}
+
+/* Card Styles */
+.skeleton-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.skeleton-image {
+  height: 200px;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+.skeleton-content {
+  padding: 16px;
+}
+
+/* List Styles */
+.skeleton-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.skeleton-list-item:last-child {
+  border-bottom: none;
+}
+
+.skeleton-list-content {
+  flex: 1;
+}
+
+/* Animation Types */
+.skeleton-wave .skeleton-line,
+.skeleton-wave .skeleton-title,
+.skeleton-wave .skeleton-subtitle,
+.skeleton-wave .skeleton-image,
+.skeleton-wave .skeleton-avatar {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeletonWave 1.5s infinite;
+}
+
+.skeleton-pulse .skeleton-line,
+.skeleton-pulse .skeleton-title,
+.skeleton-pulse .skeleton-subtitle,
+.skeleton-pulse .skeleton-image,
+.skeleton-pulse .skeleton-avatar {
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+/* Wave Animation */
+@keyframes skeletonWave {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Pulse Animation */
+@keyframes skeletonPulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Theme Variations */
+.skeleton-dark .skeleton-line,
+.skeleton-dark .skeleton-title,
+.skeleton-dark .skeleton-subtitle,
+.skeleton-dark .skeleton-image,
+.skeleton-dark .skeleton-avatar {
+  background: #333;
+}
+
+.skeleton-dark.skeleton-wave .skeleton-line,
+.skeleton-dark.skeleton-wave .skeleton-title,
+.skeleton-dark.skeleton-wave .skeleton-subtitle,
+.skeleton-dark.skeleton-wave .skeleton-image,
+.skeleton-dark.skeleton-wave .skeleton-avatar {
+  background: linear-gradient(90deg, #333 25%, #444 50%, #333 75%);
+  background-size: 200% 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skeleton-image {
+    height: 150px;
+  }
+
+  .skeleton-content {
+    padding: 12px;
+  }
+
+  .skeleton-avatar.large {
+    width: 50px;
+    height: 50px;
+  }
+}

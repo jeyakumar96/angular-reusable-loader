@@ -1,0 +1,14 @@
+<div
+  *ngIf="show"
+  class="route-loader"
+  [class]="
+    'route-' +
+    position +
+    (animated ? ' route-animated' : '') +
+    ' route-' +
+    speed +
+    (glow ? ' route-glow' : '')
+  "
+  [style.height]="height"
+  [style.background-color]="color"
+></div>

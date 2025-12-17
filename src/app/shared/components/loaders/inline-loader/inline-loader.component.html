@@ -1,0 +1,13 @@
+<div
+  *ngIf="show"
+  class="inline-loader"
+  [class]="'inline-' + position"
+  [style.gap]="gap"
+>
+  <app-spinner [size]="size" [color]="color" [showMessage]="false">
+  </app-spinner>
+
+  <span class="inline-message" *ngIf="message">
+    {{ message }}
+  </span>
+</div>
